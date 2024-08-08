@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import "../../style/style.scss";
-import techImage1 from "../../assets/tech1.jpg";
-import techImage2 from "../../assets/tech2.jpg";
-import techImage3 from "../../assets/tech3.jpg";
-import techImage4 from "../../assets/tech4.jpg";
-import techImage5 from "../../assets/tech5.jpg";
+import techImage1 from "../assets/tech1.jpg";
+import techImage2 from "../assets/tech2.jpg";
+import techImage3 from "../assets/tech3.jpg";
+import techImage4 from "../assets/tech4.jpg";
+import techImage5 from "../assets/tech5.jpg";
+
 import { RiFacebookFill } from "react-icons/ri";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoInstagram } from "react-icons/io5";
@@ -12,8 +12,10 @@ import { TfiPinterest } from "react-icons/tfi";
 import { FaVimeoV } from "react-icons/fa6";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { BsMoon } from "react-icons/bs";
-import { IoSearch, IoClose } from "react-icons/io5"; // New icon for close button
-import { GiHamburgerMenu } from "react-icons/gi"; // New icon for hamburger menu
+import { IoSearch, IoClose } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
+
+import "../style/style.scss";
 
 const Header = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -37,13 +39,14 @@ const Header = () => {
     <div>
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 w-80 bg-black text-white h-full z-50 p-4 transition-transform transform ${
+        className={`fixed top-0 left-0 w-80 bg-black text-white h-full z-50 p-4 transition-transform transform-300 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
+        style={{ transition: "transform 0.5s ease" }}
       >
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center pl-10">
           <img
-            src="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/1techblog-logo.png"
+            src="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/techblog-logo-dark@2x.png"
             alt="Tech Blog Logo"
             className="h-8"
           />
@@ -72,42 +75,42 @@ const Header = () => {
         </div>
         <div className="mt-8">
           <h3 className="text-md font-semibold">WHAT'S HOT</h3>
-          <div className="mt-4">
-            <div className="flex items-center space-x-4 mb-4">
+          <div className="mt-4 	cursor:auto;">
+            <div className="flex items-center space-x-4 mb-4 hover:bg-gray-700 transition-colors duration-300">
               <img
                 src={techImage1}
                 alt="Tech 1"
                 className="w-16 h-16 object-cover rounded"
               />
               <div>
-                <h4 className="text-sm font-medium">
+                <h4 className="text-sm font-medium text-gray-300">
                   Game Development This Week: Save On Essential Tools and More
                 </h4>
                 <p className="text-xs text-gray-500">Nov 19, 2022</p>
               </div>
             </div>
-            <div className="flex items-center space-x-4 mb-4">
+            <div className="flex items-center space-x-4 mb-4 hover:bg-gray-700 transition-colors duration-300">
               <img
                 src={techImage2}
                 alt="Tech 2"
                 className="w-16 h-16 object-cover rounded"
               />
               <div>
-                <h4 className="text-sm font-medium">
+                <h4 className="text-sm font-medium text-gray-300">
                   Is the Hyperloop Doomed? What Elon Musk's Latest Setback
                   Really Means
                 </h4>
                 <p className="text-xs text-gray-500">Mar 10, 2022</p>
               </div>
             </div>
-            <div className="flex items-center space-x-4 mb-4">
+            <div className="flex items-center space-x-4 mb-4 hover:bg-gray-700 transition-colors duration-300">
               <img
                 src={techImage3}
                 alt="Tech 3"
                 className="w-16 h-16 object-cover rounded"
               />
               <div>
-                <h4 className="text-sm font-medium">
+                <h4 className="text-sm font-medium text-gray-300">
                   The Best Early Black Friday Deals on Gaming Laptops and
                   Accessories
                 </h4>
@@ -116,21 +119,18 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="flex space-x-4 mt-8">
+        <div className="flex space-x-3 mt-auto justify-center  p-36 rounded-full">
           <a href="#" className="text-white hover:text-blue-600">
             <RiFacebookFill size={24} />
           </a>
-          <a href="#" className="text-white hover:text-blue-600">
+          <a
+            href="#"
+            className="text-white  bg-color-white-900 hover:text-blue-600 "
+          >
             <FaXTwitter size={24} />
           </a>
           <a href="#" className="text-white hover:text-blue-600">
             <IoLogoInstagram size={24} />
-          </a>
-          <a href="#" className="text-white hover:text-blue-600">
-            <TfiPinterest size={24} />
-          </a>
-          <a href="#" className="text-white hover:text-blue-600">
-            <FaVimeoV size={24} />
           </a>
         </div>
       </div>
@@ -334,10 +334,10 @@ const Header = () => {
             >
               SUBSCRIBE
             </button>
-            <button className="text-2xl hover:text-blue-600 transition-colors duration-300 pl-4">
+            <button className="text-1xl hover:text-blue-600 transition-colors duration-300 pl-4">
               <BsMoon />
             </button>
-            <button className="text-2xl hover:text-blue-600 transition-colors duration-300">
+            <button className="text-1xl hover:text-blue-600 transition-colors duration-300">
               <IoSearch />
             </button>
           </div>

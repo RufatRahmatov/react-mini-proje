@@ -1,0 +1,36 @@
+{
+    "cards": [
+        {
+            "id": 1,
+            "category": "GADGETS",
+            "title": "Study: Earbuds Use, Youngsters at High Risk of Hearing Loss",
+            "author": "Shane Doe",
+            "date": "Mar 15, 2020",
+            "image": "https://via.placeholder.com/150"
+        },
+        {
+            "id": 2,
+            "category": "TECHNOLOGY",
+            "title": "Telescope is Revealing the Galaxies of the Universe Like Never Before",
+            "author": "Shane Doe",
+            "date": "Mar 15, 2020",
+            "image": "https://via.placeholder.com/150"
+        },
+        {
+            "id": 3,
+            "category": "PHONES",
+            "title": "CarPlay Concept Shows Off a Modular UI Inspired by Next-Gen Design",
+            "author": "Shane Doe",
+            "date": "Mar 15, 2020",
+            "image": "https://via.placeholder.com/150"
+        },
+        {
+            "id": 4,
+            "category": "TECHNOLOGY",
+            "title": "Latest Windows 11 Preview Build Finally Lets You Search for Copied Text",
+            "author": "Shane Doe",
+            "date": "Mar 15, 2020",
+            "image": "https://via.placeholder.com/150"
+        }
+    ]
+}
