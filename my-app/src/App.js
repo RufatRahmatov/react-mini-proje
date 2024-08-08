@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import * as React from "react";
 import './style/style.scss'; // Importing the styles
 import Header from './layout/Header';
 import BigCard from './page/BigCard';
-
 import CardList from './components/CardList';
 import CardForm from './components/CardForm';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import SmallCard from "./page/SmallCard";
 
-export default function App() {
-    const [editingCard, setEditingCard] = useState(null);
+function App() {
+    const [editingCard, setEditingCard] = React.useState(null);
 
     const handleEditCard = card => {
         setEditingCard(card);
@@ -18,16 +18,36 @@ export default function App() {
         setEditingCard(null);
     };
 
-    return (
-        <Router>
-            <Header />
-            <Routes>
-                <Route path="/layout" element={<Header />} />
-                <Route path="/bigcard" element={<BigCard />} />
-                <Route path="/" element={<CardList onEdit={handleEditCard} />} />
-                <Route path="/edit" element={<CardForm card={editingCard} onSave={handleSaveCard} />} />
+    const router = createBrowserRouter([
+        {
+            path: "/page",
+            element: <BigCard />,
+        },
+        {
+            path: "/page",
+            element: <SmallCard />
 
-            </Routes>
-        </Router>
+        },
+        {
+            path: "edit",
+            element: <CardForm card={editingCard} onSave={handleSaveCard} />,
+        },
+        {
+            path: "layout",
+            element: <Header />,
+        },
+        {
+            // path: "/page",
+            // element: <BigCard />,
+        },
+    ]);
+
+    return (
+        <>
+            <Header />
+            <RouterProvider router={router} />
+        </>
     );
 }
+
+export default App;

@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const CardForm = ({ card, onSave }) => {
-  const [formData, setFormData] = useState(
-    card || {
-      category: "",
-      title: "",
-      author: "",
-      date: "",
-      image: "",
+  const [formData, setFormData] = useState({
+    category: "",
+    title: "",
+    author: "",
+    date: "",
+    image: "",
+  });
+
+  useEffect(() => {
+    if (card) {
+      setFormData(card);
     }
-  );
+  }, [card]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

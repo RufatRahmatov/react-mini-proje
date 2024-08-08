@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ card, onDelete, onEdit }) => {
+const Card = ({ card, onDelete, onEdit, onCrate }) => {
   return (
     <div className="relative rounded overflow-hidden shadow-lg p-4">
       <img className="w-full" src={card.image} alt={card.title} />
@@ -26,6 +26,12 @@ const Card = ({ card, onDelete, onEdit }) => {
           </button>
           <button
             onClick={() => onEdit(card)}
+            className="bg-blue-500 text-white p-2 mt-2 rounded ml-2"
+          >
+            Edit
+          </button>
+          <button
+            onClick={() => onCrate(card)}
             className="bg-blue-500 text-white p-2 mt-2 rounded ml-2"
           >
             Edit

@@ -225,9 +225,9 @@ const Header = () => {
                 Technology <MdKeyboardArrowDown />
               </button>
               <div
-                className={`absolute left-1/2 transform -translate-x-1/2 mt-4 ${
+                className={` z-30 absolute left-1/2 transform -translate-x-1/2 mt-4 ${
                   menuOpen ? "block" : "hidden"
-                } bg-white shadow-lg transition-transform duration-300 p-4 grid grid-cols-5 gap-4 w-[1200px] h-72`}
+                } bg-white shadow-lg transition-transform duration-300 p-4 grid grid-cols-5 gap-0 w-[1200px] h-72`}
               >
                 <a
                   href="#"
@@ -242,7 +242,7 @@ const Header = () => {
                     Is the Hyperloop Doomed? What Elon Musk's Latest Setback
                     Really Means
                   </p>
-                  <p className="text-xs text-gray-500">Mar 10, 2022</p>
+                  <p className="text-xs text-gray-500 mt-2">Mar 10, 2022</p>
                 </a>
                 <a
                   href="#"
@@ -257,7 +257,7 @@ const Header = () => {
                     The Best Early Black Friday Deals on Gaming Laptops and
                     Accessories
                   </p>
-                  <p className="text-xs text-gray-500">Mar 10, 2022</p>
+                  <p className="text-xs text-gray-500 mt-2">Mar 10, 2022</p>
                 </a>
                 <a
                   href="#"
@@ -271,7 +271,7 @@ const Header = () => {
                   <p className="mt-2 text-sm font-medium hover:text-blue-600 transition-colors duration-300">
                     Apple Watch’s ECG Can Help Diagnose Heart Problem: Research
                   </p>
-                  <p className="text-xs text-gray-500">Jan 19, 2021</p>
+                  <p className="text-xs text-gray-500 mt-2">Jan 19, 2021</p>
                 </a>
                 <a
                   href="#"
@@ -286,7 +286,7 @@ const Header = () => {
                     Simple Tips and Tricks to Take Care of Your Expensive DSLR
                     Camera
                   </p>
-                  <p className="text-xs text-gray-500">Jan 16, 2021</p>
+                  <p className="text-xs text-gray-500 mt-2">Jan 16, 2021</p>
                 </a>
                 <a
                   href="#"
@@ -301,7 +301,7 @@ const Header = () => {
                     Tech Study Reveals Effects of Mobile Technology on
                     Professionals
                   </p>
-                  <p className="text-xs text-gray-500">Jan 15, 2021</p>
+                  <p className="text-xs text-gray-500 mt-2">Jan 15, 2021</p>
                 </a>
               </div>
             </div>
@@ -328,10 +328,7 @@ const Header = () => {
             </a>
           </div>
           <div className="flex items-center space-x-2">
-            <button
-              className="text-white py-1.5 px-4 pr-3.5 rounded-md hover:bg-black transition-colors duration-300"
-              style={{ backgroundColor: "#3C3FDE" }}
-            >
+            <button className="text-white py-1.5 px-4 pr-3.5  rounded-md bg-[#3C3FDE] hover:bg-black transition-colors duration-300 ">
               SUBSCRIBE
             </button>
             <button className="text-1xl hover:text-blue-600 transition-colors duration-300 pl-4">
