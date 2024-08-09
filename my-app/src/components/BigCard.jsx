@@ -2,8 +2,8 @@ import React from "react";
 
 const BigCard = () => {
   return (
-    <div className="mt-10 rounded-lg relative overflow-hidden shadow-lg w-[650px]">
-      <div className="group w-[800px]">
+    <div className="mt-10 rounded-lg relative overflow-hidden shadow-lg w-[750px]">
+      <div className="group w-[750px]">
         <img
           className="w-[800px] h-[500px] object-cover rounded-lg relative group-hover:scale-105 transition-transform duration-300 ease-in-out"
           src="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_29247013_xl-2015-2-768x512.jpg"
@@ -30,6 +30,57 @@ const BigCard = () => {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  );
+};
+
+const CardSection = () => {
+  const cardsData = [
+    {
+      image:
+        "https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/daniel-korpai-seLBnDRB6_M-unsplash-1-1-819x1024.jpg",
+      category: "TECHNOLOGY",
+      title:
+        "Tablet PC Market to Witness Exponential Growth by 2028, Sources Say",
+      author: "Shane Doe",
+      date: "Jan 11, 2020",
+    },
+    {
+      image:
+        "https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_245244020_xl-2015-2-1024x756.jpg",
+      category: "TECHNOLOGY",
+      title:
+        "Microsoft Co-Founder Bill Gates Visits EU, Steers Clean Energy Talks",
+      author: "Shane Doe",
+      date: "Jan 11, 2020",
+    },
+  ];
+
+  return (
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="absolute top-[40px] grid grid-cols-1 md:grid-cols-2 gap-4">
+        {cardsData.map((card, index) => (
+          <div
+            key={index}
+            className="max-w-sm rounded-xl overflow-hidden shadow-lg"
+          >
+            <img
+              className="w-full h-48 object-cover"
+              src={card.image}
+              alt="Card image cap"
+            />
+            <div className="px-6 py-4">
+              <span className="bg-blue-500 text-white px-2 py-1 text-xs font-semibold rounded">
+                {card.category}
+              </span>
+              <div className="font-bold text-xl mt-2 mb-2">{card.title}</div>
+              <p className="text-gray-700 text-base">
+                {card.author} • {card.date}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -66,7 +117,7 @@ const ArticleCard = ({ category, title, author, date, imgSrc }) => {
 const Layout = () => {
   return (
     <div className="container mx-auto p-4">
-      <div className="flex justify-center items-center mr-4 flex-col lg:flex-row lg:space-x-4">
+      <div className="flex justify-center items-center mr-0 ml-114 flex-col lg:flex-row lg:space-x-4">
         <div className="lg:w-2/2 relative -top-[180px]">
           <BigCard />
         </div>
@@ -113,6 +164,9 @@ const Layout = () => {
           </div>
         </div>
       </div>
+
+      {/* CardSection buraya ekleniyor */}
+      <CardSection />
     </div>
   );
 };

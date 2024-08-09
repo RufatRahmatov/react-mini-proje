@@ -1,19 +1,21 @@
-// import React from "react";
+import React from "react";
+import BigCard from "../components/BigCard";
+// import SmallCard from "../components/SmallCard";
 
-// import { Routers, Route } from "./router";
-// import BigCard from "./BigCard";
-// import SmallCard from "./SmallCard";
+const HomePage = () => {
+  return (
+    <div>
+      <BigCard />
+      {/* <SmallCard */}
+      {/* category={"TECHNOLOGY"}
+        title={
+          "Save $25 on Philips Wired Headphone For A Great Sounding Over-Ear Headphone"
+        }
+        author={"John Doe"}
+        date={"August 9, 2024"}
+      /> */}
+    </div>
+  );
+};
 
-// const Home = () => {
-//   return (
-//     <div>
-//       <Routers>
-//         <Route path="/" element={<Home />} />
-//         <Route path="bigcard" element={<BigCard />} />
-//         <Route path="smallcard" element={<SmallCard />} />
-//       </Routers>
-//     </div>
-//   );
-// };
-
-// export default Home;
+export default HomePage;
