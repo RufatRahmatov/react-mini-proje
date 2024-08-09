@@ -1,16 +1,19 @@
 import * as React from "react";
 import './style/style.scss'; // Importing the styles
 import Header from './layout/Header';
+import Footer from './layout/Footer'; // Footer dosyasını da ekledik
 import BigCard from './page/BigCard';
-import CardList from './components/CardList';
-import CardForm from './components/CardForm';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import SmallCard from "./page/SmallCard";
+import Card from "./page/Card";
+import CardForm from "./page/CardForm";
+import CardList from "./page/CardList";
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
     const [editingCard, setEditingCard] = React.useState(null);
 
-    const handleEditCard = card => {
+    const handleEditCard = (card) => {
         setEditingCard(card);
     };
 
@@ -18,35 +21,18 @@ function App() {
         setEditingCard(null);
     };
 
-    const router = createBrowserRouter([
-        {
-            path: "/page",
-            element: <BigCard />,
-        },
-        {
-            path: "/page",
-            element: <SmallCard />
-
-        },
-        {
-            path: "edit",
-            element: <CardForm card={editingCard} onSave={handleSaveCard} />,
-        },
-        {
-            path: "layout",
-            element: <Header />,
-        },
-        {
-            // path: "/page",
-            // element: <BigCard />,
-        },
-    ]);
-
     return (
-        <>
+        <Router>
             <Header />
-            <RouterProvider router={router} />
-        </>
+            <Routes>
+                <Route path="/" element={<BigCard />} /> {/* Default route olarak BigCard sayfası */}
+                <Route path="/page" element={<SmallCard />} />
+                <Route path="/card" element={<Card />} />
+                <Route path="/card-form" element={<CardForm />} />
+                <Route path="/card-list" element={<CardList />} />
+            </Routes>
+            {/* <Footer />  */}
+        </Router>
     );
 }
 

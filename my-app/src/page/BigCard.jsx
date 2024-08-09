@@ -2,10 +2,10 @@ import React from "react";
 
 const BigCard = () => {
   return (
-    <div className="mt-10 rounded-lg relative overflow-hidden shadow-lg w-[650px] mx-auto">
-      <div className="group w-[700]">
+    <div className="mt-10 rounded-lg relative overflow-hidden shadow-lg w-[650px]">
+      <div className="group w-[800px]">
         <img
-          className="w-[720px] h-[460px] object-cover rounded-lg relative group-hover:scale-105 transition-transform duration-300 ease-in-out"
+          className="w-[800px] h-[500px] object-cover rounded-lg relative group-hover:scale-105 transition-transform duration-300 ease-in-out"
           src="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_29247013_xl-2015-2-768x512.jpg"
           alt="Headphones"
         />
@@ -35,4 +35,86 @@ const BigCard = () => {
   );
 };
 
-export default BigCard;
+const ArticleCard = ({ category, title, author, date, imgSrc }) => {
+  return (
+    <div className="flex items-center mb-4 border-b border-gray-300 pb-4">
+      <div className="flex-1">
+        <span
+          className={`text-sm font-bold ${
+            category === "TECHNOLOGY" ? "text-blue-600" : "text-pink-600"
+          }`}
+        >
+          {category}
+        </span>
+        <h3 className="text-lg font-bold text-gray-800 hover:text-blue-600 transition-colors duration-300">
+          {title}
+        </h3>
+        <div className="flex items-center text-gray-600 text-xs">
+          <p>{author}</p>
+          <p className="ml-2">• {date}</p>
+        </div>
+      </div>
+      <img
+        className="w-16 h-16 object-cover rounded-full ml-6"
+        src={imgSrc}
+        alt={title}
+      />
+    </div>
+  );
+};
+
+const Layout = () => {
+  return (
+    <div className="container mx-auto p-4">
+      <div className="flex justify-center items-center mr-4 flex-col lg:flex-row lg:space-x-4">
+        <div className="lg:w-2/2 relative -top-[180px]">
+          <BigCard />
+        </div>
+        <div className="lg:w-1/3 mt-6  p-8 lg:mt-0 ">
+          <h2 className="text-2xl w-[320px] p-1 relative -top-[2px] button-3 border-b-2 border-gren font-bold text-gray-800 mb-4">
+            People's Favorite
+          </h2>
+          <div className="space-y-4 w-[320px] p-1">
+            <ArticleCard
+              category="TECHNOLOGY"
+              title="Schools, Parents Disagree over Bans on Student Mobile Phones"
+              author="Shane Doe"
+              date="6 Mins Read"
+              imgSrc="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/youssef-sarhan-tze1kKj7Lgg-unsplash-1-768x489.jpg"
+            />
+            <ArticleCard
+              category="GADGETS"
+              title="PC Game Deals: Stealth Classic to Grab, Fresh VR Bundle & More"
+              author="Shane Doe"
+              date="6 Mins Read"
+              imgSrc="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/pexels-sound-on-3761262-1-768x455.jpg"
+            />
+            <ArticleCard
+              category="TECHNOLOGY"
+              title="Electric Car Owners to Pay Road Tax from 2025, Hunt Announces"
+              author="Shane Doe"
+              date="6 Mins Read"
+              imgSrc="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_273724454_xl-2015-768x512.jpg"
+            />
+            <ArticleCard
+              category="PHONES"
+              title="Tackling Smartphone Addiction: Village Bans Mobiles for Minors"
+              author="Shane Doe"
+              date="6 Mins Read"
+              imgSrc="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_378099058_xl-2015-1-768x461.jpg"
+            />
+            <ArticleCard
+              category="TECHNOLOGY"
+              title="Epic Games Store Gives Away One Of The Best VR Games"
+              author="Shane Doe"
+              date="6 Mins Read"
+              imgSrc="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_286775054_xl-2015-1-1024x445.jpg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Layout;

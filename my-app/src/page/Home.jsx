@@ -1,9 +1,19 @@
-import React from "react";
+// import React from "react";
 
-import { routers } from "./router";
-import BigCard from "./BigCard";
-import SmallCard from "./SmallCard";
+// import { Routers, Route } from "./router";
+// import BigCard from "./BigCard";
+// import SmallCard from "./SmallCard";
 
-const Home = () => {};
+// const Home = () => {
+//   return (
+//     <div>
+//       <Routers>
+//         <Route path="/" element={<Home />} />
+//         <Route path="bigcard" element={<BigCard />} />
+//         <Route path="smallcard" element={<SmallCard />} />
+//       </Routers>
+//     </div>
+//   );
+// };
 
-export default Home;
+// export default Home;
